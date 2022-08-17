@@ -1,0 +1,155 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    .headerPadre{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "titulo titulo login"; 
+        
+        .tituloPixel{
+            display: flex;
+            grid-area: titulo;
+            font-size:larger ;
+            color: rgb(168, 130, 238);
+            font-family: 'Silkscreen', cursive;
+            align-items: center;
+            
+            .pixelFoto{
+                height: 50px;
+                width: 50px;
+                object-fit: cover;
+            }
+            
+        }
+
+        nav{
+            .flexNav{
+                grid-area: login;
+                display: flex;
+                justify-content: flex-end;
+                gap: 15px;
+                list-style: none;
+                margin-bottom: 5px;
+            } 
+            
+            
+        }
+
+    
+    }
+
+    .secondNav{
+
+        .flexMenu{
+
+            display: flex;
+            justify-content: center;
+            list-style: none ;
+            gap: 20%;
+            background-color: rgb(249, 240, 255);
+            margin-bottom: 25px;
+            font-size: larger;
+        
+        }
+    }
+
+
+
+
+}
+
+main{
+    .imgProm{
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+
+    section{
+        .prodDest{
+            text-align: center;
+            background-color: grey;
+            margin-bottom: 25px;
+        }
+
+        .flexProd{
+            display: grid;
+            grid-template-columns: repeat(4 1fr);
+            grid-template-rows: 1fr;
+            grid-template-areas:" 1img 2img 3img 4img";
+            justify-content: center;
+            
+            .productos{
+                width: 50%;
+                
+            }
+            .img1{
+                grid-area: 1img ;
+                justify-self: center;
+            }
+            
+            .img2{
+                grid-area: 2img;
+                justify-self: center;
+            }
+            
+            .img3{
+                grid-area: 3img;
+                justify-self: center;
+            }
+            
+            .img4{
+                grid-area: 4img;
+                justify-self: center;
+            }
+        }
+    }
+}
+
+.footerPadre{
+    display: grid; 
+    grid-template-columns: 0.5fr 1fr 2fr 2fr ;
+    grid-template-rows: auto ; 
+    grid-template-areas:"mapa textomapa redes copyright" ;
+    background-color: grey;
+
+    .mapa{
+        grid-area: mapa;
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .parrafoFooter{
+        grid-area: textomapa;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        font-size: small;
+        text-align: left;
+    }
+    
+    .redes{
+        grid-area: redes;
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .terminos{
+        grid: copyright;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+    }
+}
