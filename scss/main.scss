@@ -1,4 +1,6 @@
+@import "base/variables";
 *{
+
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
@@ -16,7 +18,7 @@ header{
             display: flex;
             grid-area: titulo;
             font-size:larger ;
-            color: rgb(168, 130, 238);
+            color: $colorPixel;
             font-family: 'Silkscreen', cursive;
             align-items: center;
             
@@ -73,9 +75,11 @@ main{
 
     section{
         .prodDest{
+            
             text-align: center;
             background-color: grey;
             margin-bottom: 25px;
+            color: $productosDestacados;
         }
 
         .flexProd{
@@ -152,4 +156,71 @@ main{
         justify-content: center;
         align-items: center;
     }
+}
+
+
+
+/*Login*/
+
+
+.flexMain{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(212, 205, 240);
+    align-items: center;
+    height: 735px;
+
+    .inicioSesion{
+        border: solid 2px black;
+        width: 400px;
+        background: rgb(178, 162, 236);
+        border-radius: 10px;
+
+        h2{
+            text-align: center;
+            padding:20px ;
+        
+        }
+        .cuadro{
+
+            .username{
+                padding-left: 20px;
+                width: 150px;
+            
+            }
+            
+            form .contrasena{
+                position: relative;
+                margin: 30px 0;
+            }
+            .contrasena{
+                padding-left: 20px;
+                width: 150px;
+            }
+            
+            .olvidaste{
+                position: relative;
+                margin: 20px;
+            }
+
+            .iniciarSesion{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+
+/*Promociones*/
+
+.mainProductos{
+    .imgTamano{
+        width: 100%;
+        height: 100%;
+     }
 }
