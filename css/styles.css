@@ -8,7 +8,8 @@ header .headerPadre {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "titulo titulo login"; }
+  grid-template-areas: "titulo titulo login";
+  background-color: #f9f0ff; }
   header .headerPadre .tituloPixel {
     display: flex;
     grid-area: titulo;
@@ -27,6 +28,10 @@ header .headerPadre {
     gap: 15px;
     list-style: none;
     margin-bottom: 5px; }
+    header .headerPadre nav .flexNav .linkMenu {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold; }
 
 header .secondNav .flexMenu {
   display: flex;
@@ -34,8 +39,12 @@ header .secondNav .flexMenu {
   list-style: none;
   gap: 20%;
   background-color: #f9f0ff;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
   font-size: larger; }
+  header .secondNav .flexMenu .linkMenu {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold; }
 
 main .imgProm {
   width: 100%;
@@ -44,7 +53,7 @@ main .imgProm {
 
 main section .prodDest {
   text-align: center;
-  background-color: grey;
+  background-color: #f9f0ff;
   margin-bottom: 25px;
   color: #1f0b4e; }
 
@@ -85,21 +94,60 @@ main section .flexProd {
     flex-direction: column;
     justify-content: end;
     font-size: small;
-    text-align: left; }
+    text-align: left;
+    font-weight: bold; }
   .footerPadre .redes {
     grid-area: redes;
     display: flex;
     list-style: none;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    font-weight: bold; }
   .footerPadre .terminos {
     grid: copyright;
     display: flex;
     flex-direction: column;
     list-style: none;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    font-weight: bold; }
+    .footerPadre .terminos .contactoFooter {
+      text-decoration: none; }
+
+@media screen and (max-width: 600px) {
+  header .secondNav .flexMenu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 5%;
+    background-color: #f9f0ff;
+    padding-bottom: 25px;
+    font-size: larger; }
+    header .secondNav .flexMenu .linkMenu {
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold; }
+  main section .flexProd {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4 1fr);
+    grid-template-areas: " 1img"  "2img" "3img"  "4img";
+    justify-content: center; }
+    main section .flexProd .productos {
+      width: 50%; }
+    main section .flexProd .img1 {
+      grid-area: 1img;
+      justify-self: center; }
+    main section .flexProd .img2 {
+      grid-area: 2img;
+      justify-self: center; }
+    main section .flexProd .img3 {
+      grid-area: 3img;
+      justify-self: center; }
+    main section .flexProd .img4 {
+      grid-area: 4img;
+      justify-self: center; } }
 
 /*Login*/
 .flexMain {
@@ -111,7 +159,7 @@ main section .flexProd {
   .flexMain .inicioSesion {
     border: solid 2px black;
     width: 400px;
-    background: #b2a2ec;
+    background: #9876f5;
     border-radius: 10px; }
     .flexMain .inicioSesion h2 {
       text-align: center;
@@ -137,5 +185,81 @@ main section .flexProd {
 
 /*Promociones*/
 .mainProductos .imgTamano {
-  width: 100%;
-  height: 100%; }
+  width: 150px;
+  height: 150px; }
+
+@media (max-width: 1200px) {
+  .mainProductos div .parrafoProm {
+    width: 100%; }
+  .mainProductos div .imgPromotion {
+    width: 100%; } }
+
+/*Contacto*/
+.mainContacto {
+  height: 665px;
+  background-color: #d4cdf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 735px; }
+  .mainContacto .cuadroContacto {
+    width: 450px;
+    margin: auto;
+    background: #9876f5;
+    padding: 10px 20px;
+    border-radius: 7px; }
+    .mainContacto .cuadroContacto .tituloContacto {
+      color: #381f38;
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 20px; }
+    .mainContacto .cuadroContacto .formuC, .mainContacto .cuadroContacto .mensajeC {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 7px;
+      font-size: 17px;
+      border: none; }
+    .mainContacto .cuadroContacto .mensajeC {
+      min-height: 100px;
+      max-height: 200px;
+      max-width: 100%; }
+    .mainContacto .cuadroContacto .botonC {
+      display: block;
+      background: #b9abdf;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto; }
+
+/*Productos*/
+.listaProductos {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "producto imgMonitor1 imgMonitor2" "producto imgMonitor3 imgMonitor4";
+  row-gap: 4rem;
+  column-gap: 4rem;
+  padding: 5%; }
+  .listaProductos .monitoresProd {
+    font-size: x-large;
+    font-weight: 1000; }
+  .listaProductos .productosList {
+    grid-area: producto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 4rem;
+    list-style: none;
+    font-size: larger;
+    justify-self: center;
+    align-self: center; }
+  .listaProductos .imagenesMonitor {
+    width: 100%;
+    height: 80%; }
+  .listaProductos .imagenesMonitor1 {
+    grid-area: imgMonitor1; }
+  .listaProductos .imagenesMonitor2 {
+    grid-area: imgMonitor2; }
+  .listaProductos .imagenesMonitor3 {
+    grid-area: imgMonitor3; }
+  .listaProductos .imagenesMonitor4 {
+    grid-area: imgMonitor4; }

@@ -1,6 +1,6 @@
 @import "base/variables";
 *{
-
+    
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
@@ -9,10 +9,12 @@
 
 header{
     .headerPadre{
+        
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas: "titulo titulo login"; 
+        grid-template-areas: "titulo titulo login";
+        background-color: $separadorViolet; 
         
         .tituloPixel{
             display: flex;
@@ -38,7 +40,14 @@ header{
                 gap: 15px;
                 list-style: none;
                 margin-bottom: 5px;
-            } 
+
+                .linkMenu{
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight:bold;
+                }
+            }
+
             
             
         }
@@ -50,13 +59,20 @@ header{
 
         .flexMenu{
 
+
             display: flex;
             justify-content: center;
             list-style: none ;
             gap: 20%;
-            background-color: rgb(249, 240, 255);
-            margin-bottom: 25px;
+            background-color: $separadorViolet;
+            padding-bottom: 25px;
             font-size: larger;
+
+            .linkMenu{
+                text-decoration: none;
+                font-size: 25px;
+                font-weight:bold;
+            }
         
         }
     }
@@ -77,7 +93,7 @@ main{
         .prodDest{
             
             text-align: center;
-            background-color: grey;
+            background-color: $separadorViolet;
             margin-bottom: 25px;
             color: $productosDestacados;
         }
@@ -114,6 +130,7 @@ main{
             }
         }
     }
+
 }
 
 .footerPadre{
@@ -137,6 +154,7 @@ main{
         justify-content: end;
         font-size: small;
         text-align: left;
+        font-weight: bold;
     }
     
     .redes{
@@ -146,6 +164,7 @@ main{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-weight: bold;
     }
     
     .terminos{
@@ -155,8 +174,78 @@ main{
         list-style: none;
         justify-content: center;
         align-items: center;
+        font-weight: bold;
+
+        .contactoFooter{
+            text-decoration: none;
+        }
     }
 }
+@media screen and (max-width: 600px){
+
+    header{
+        .secondNav{
+
+            .flexMenu{
+                display: flex;
+                justify-content: center;
+                list-style: none ;
+                gap: 5%;
+                background-color: $separadorViolet;
+                padding-bottom: 25px;
+                font-size: larger;
+    
+                .linkMenu{
+                    text-decoration: none;
+                    font-size: 25px;
+                    font-weight:bold;
+                }
+
+            }
+        }
+    }
+
+    main{
+        section{
+            .flexProd{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows:repeat(4 1fr) ;
+                grid-template-areas:" 1img" 
+                                      "2img"
+                                      "3img" 
+                                      "4img";
+                justify-content: center;
+                
+                .productos{
+                    width: 50%;
+                    
+                }
+                .img1{
+                    grid-area: 1img ;
+                    justify-self: center;
+                }
+                
+                .img2{
+                    grid-area: 2img;
+                    justify-self: center;
+                }
+                
+                .img3{
+                    grid-area: 3img;
+                    justify-self: center;
+                }
+                
+                .img4{
+                    grid-area: 4img;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+    
+}
+
 
 
 
@@ -173,8 +262,10 @@ main{
     .inicioSesion{
         border: solid 2px black;
         width: 400px;
-        background: rgb(178, 162, 236);
+        background: rgb(152, 118, 245);
         border-radius: 10px;
+
+
 
         h2{
             text-align: center;
@@ -220,7 +311,138 @@ main{
 
 .mainProductos{
     .imgTamano{
-        width: 100%;
-        height: 100%;
-     }
+        width: 150px;
+        height: 150px;
+     } 
+
+}
+
+@media (max-width:1200px){
+
+    .mainProductos{
+        div{
+            .parrafoProm{
+                width: 100%;
+            }
+            .imgPromotion{
+                width: 100%;
+            }
+        }
+    }
+}
+
+/*Contacto*/
+
+.mainContacto{
+
+    height: 665px;
+    background-color: $colorFondo;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    height: 735px;
+
+
+
+    .cuadroContacto{
+
+        width: 450px;
+        margin: auto;
+        background: rgb(152, 118, 245);
+        padding: 10px 20px ;
+        border-radius: 7px;
+    
+        .tituloContacto{
+            color: rgb(56, 31, 56);
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+    
+        .formuC, .mensajeC{
+    
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 7px;
+            font-size: 17px;
+            border: none;
+        }
+        
+        .mensajeC{
+            min-height: 100px;
+            max-height: 200px;
+            max-width: 100%;
+        }
+    
+        .botonC{
+            display: block;
+            background: rgb(185, 171, 223);
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            
+    
+        }
+    }
+}
+
+
+
+/*Productos*/
+
+.listaProductos{
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "producto imgMonitor1 imgMonitor2"
+                         "producto imgMonitor3 imgMonitor4";
+
+    row-gap: 4rem;
+    column-gap: 4rem;
+    padding: 5%;
+
+        .monitoresProd{
+            font-size: x-large;
+            font-weight: 1000;
+        }
+
+        .productosList{
+            grid-area: producto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-left: 4rem;
+            list-style: none;
+            font-size: larger;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .imagenesMonitor{
+            width: 100%;
+            height: 80%;
+        }
+
+        .imagenesMonitor1{
+            grid-area: imgMonitor1;
+
+        }
+
+        .imagenesMonitor2{
+            grid-area: imgMonitor2;
+
+        }
+
+        .imagenesMonitor3{
+            grid-area: imgMonitor3;
+
+        }
+
+        .imagenesMonitor4{
+            grid-area: imgMonitor4;
+
+        }
+
+
 }
